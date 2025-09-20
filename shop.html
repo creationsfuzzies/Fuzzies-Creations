@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Shop - Fuzzies Creations</title>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Inter', 'Noto Sans', Arial, sans-serif;
+        background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+        min-height: 100vh;
+      }
+      .product-detail-page {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 24px;
+        background: #fff;
+        border-radius: 24px;
+        box-shadow: 0 8px 32px rgba(60, 72, 88, 0.12);
+      }
+      .highlight-card-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        margin-bottom: 40px;
+      }
+      .highlight-card {
+        background: #f1f5f9;
+        border-radius: 20px;
+        box-shadow: 0 4px 16px rgba(99, 102, 241, 0.13);
+        padding: 32px 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: fadeInUp 1s;
+        cursor: pointer;
+        transition: box-shadow 0.2s, transform 0.2s;
+      }
+      .highlight-card:hover {
+        box-shadow: 0 8px 24px rgba(99, 102, 241, 0.18);
+        transform: translateY(-4px) scale(1.03);
+      }
+      .highlight-card img {
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 16px;
+        margin-bottom: 18px;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(99, 102, 241, 0.10);
+      }
+      .highlight-title {
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: #6366f1;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .highlight-price {
+        font-size: 1.2rem;
+        color: #374151;
+        font-weight: 600;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .highlight-desc {
+        font-size: 1.05rem;
+        color: #4b5563;
+        text-align: center;
+        margin-bottom: 8px;
+        display: none;
+      }
+      .text-wrapper {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #6366f1;
+        margin-bottom: 32px;
+        text-align: center;
+        font-family: 'STIX Two Text', serif;
+      }
+      .related-products-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #6366f1;
+        margin-bottom: 24px;
+        text-align: center;
+      }
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 32px;
+        margin-bottom: 32px;
+      }
+      .card-link {
+        text-decoration: none;
+        color: inherit;
+      }
+      .card {
+        background: #f1f5f9;
+        border-radius: 16px;
+        box-shadow: 0 2px 8px rgba(99, 102, 241, 0.10);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: box-shadow 0.2s, transform 0.2s;
+        cursor: pointer;
+      }
+      .card:hover {
+        box-shadow: 0 8px 24px rgba(99, 102, 241, 0.18);
+        transform: translateY(-4px) scale(1.03);
+      }
+      .card img {
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 16px;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(99, 102, 241, 0.10);
+        transition: box-shadow 0.2s;
+      }
+      .product-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #374151;
+        margin-bottom: 8px;
+        text-align: center;
+      }
+      .product-price {
+        font-size: 1rem;
+        color: #6366f1;
+        font-weight: 600;
+        margin-bottom: 8px;
+        text-align: center;
+      }
+      .product-desc {
+        font-size: 0.95rem;
+        color: #4b5563;
+        text-align: center;
+        margin-bottom: 8px;
+        display: none;
+      }
+      .navigation {
+        margin-top: 24px;
+        text-align: center;
+      }
+      .text-wrapper-2 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #6366f1;
+        margin-bottom: 8px;
+      }
+      .items {
+        margin-bottom: 8px;
+      }
+      @media (max-width: 767px) {
+        .product-detail-page {
+          padding: 8px;
+        }
+        .highlight-card img {
+          width: 140px;
+          height: 140px;
+        }
+        .card img {
+          width: 90px;
+          height: 90px;
+        }
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(40px);}
+        to { opacity: 1; transform: translateY(0);}
+      }
+    </style>
+    <script>
+      // Show product description on card and highlight click
+      document.addEventListener('DOMContentLoaded', function() {
+        // Highlight card click
+        document.querySelectorAll('.highlight-card-link').forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelectorAll('.highlight-desc').forEach(function(desc) {
+              desc.style.display = 'none';
+            });
+            var desc = this.querySelector('.highlight-desc');
+            if (desc) desc.style.display = 'block';
+          });
+        });
+        // Related product cards click
+        document.querySelectorAll('.card-link').forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelectorAll('.product-desc').forEach(function(desc) {
+              desc.style.display = 'none';
+            });
+            var desc = this.querySelector('.product-desc');
+            if (desc) desc.style.display = 'block';
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="product-detail-page">
+      <div class="text-wrapper">Products</div>
+      <!-- Highlighted Tulip Lamp Product (Clickable) -->
+      <a href="#" class="highlight-card-link">
+        <div class="highlight-card">
+          <img src="../img/tulip lamp.jpg" alt="Tulip Lamp - Loopsie Decor" />
+          <div class="highlight-title">Tulip Lamp - Loopsie Decor</div>
+          <div class="highlight-price">₱120</div>
+          <div class="highlight-desc">
+            The Loopsie Tulip Lamp glows softly with LED lights, perfect as a night lamp, mood light, or eye-catching décor.<br><br>
+            This unique lamp is handcrafted using fuzzy wires and features a tulip design that brings warmth and charm to any room. Its gentle LED glow makes it ideal for bedrooms, living spaces, or as a thoughtful gift. Each piece is made with care and creativity, ensuring a one-of-a-kind decor item that stands out.
+          </div>
+        </div>
+      </a>
+      <!-- Related Products Section -->
+      <div class="related-products-title">Related Products</div>
+      <div class="card-grid">
+        <a href="#" class="card-link">
+          <div class="card">
+            <img src="../img/sunflower top.jpg" alt="Loopsie Decor Sunflower" />
+            <div class="product-title">Loopsie Decor (Sunflower)</div>
+            <div class="product-price">₱80</div>
+            <div class="product-desc">
+              Handcrafted sunflower decor made from fuzzy wires. Brighten up your space with a touch of creativity!
+            </div>
+          </div>
+        </a>
+        <a href="#" class="card-link">
+          <div class="card">
+            <img src="../img/loopsie keychain.jpg" alt="Loopsie Keychain" />
+            <div class="product-title">Loopsie Keychain</div>
+            <div class="product-price">₱25</div>
+            <div class="product-desc">
+              Cute and colorful keychain made from fuzzy wires. A fun accessory for your keys or bags!
+            </div>
+          </div>
+        </a>
+        <a href="#" class="card-link">
+          <div class="card">
+            <img src="../img/loopsie hat.jpg" alt="Loopsie Hat" />
+            <div class="product-title">Loopsie Hat</div>
+            <div class="product-price">₱200</div>
+            <div class="product-desc">
+              Unique handmade hat with fuzzy wire loops. Express your style with this playful accessory!
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="navigation">
+        <div class="text-wrapper-2">Fuzzies Creations</div>
+      </div>
+    </div>
+  </body>
+</html>
