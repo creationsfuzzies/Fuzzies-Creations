@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fuzzies Creations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Inter', 'Noto Sans', Arial, sans-serif;
+        background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+        min-height: 100vh;
+      }
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+        padding: 40px 16px;
+      }
+      .card {
+        position: relative;
+        background: #fff;
+        border-radius: 24px;
+        box-shadow: 0 8px 32px rgba(60, 72, 88, 0.12);
+        max-width: 700px;
+        width: 100%;
+        padding: 32px;
+        margin-top: 32px;
+        animation: fadeInUp 1s;
+        overflow: hidden;
+        /* Add background image */
+        background-image: url('../public/fuzzies-creations.jpg');
+        background-repeat: no-repeat;
+        background-size: 320px auto;
+        background-position: top center;
+        min-height: 600px;
+      }
+      .loopsie-cover-img {
+        position: absolute;
+        top: 32px;
+        right: 32px;
+        width: 120px;
+        height: auto;
+        border-radius: 16px;
+        box-shadow: 0 2px 8px rgba(99, 102, 241, 0.10);
+        z-index: 2;
+        background: #fff;
+        padding: 4px;
+      }
+      .shop-text10 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #6366f1;
+        font-family: 'STIX Two Text', serif;
+        margin-bottom: 12px;
+        display: block;
+        text-align: center;
+        margin-top: 340px; /* Push content below background image */
+      }
+      .shop-image4911969865525409445891303961039124357400910n1 {
+        display: block;
+        margin: 0 auto 24px auto;
+        max-width: 180px;
+        border-radius: 16px;
+        box-shadow: 0 2px 8px rgba(99, 102, 241, 0.10);
+      }
+      .Title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #374151;
+        margin-bottom: 8px;
+        display: block;
+      }
+      .Bodytext {
+        font-size: 1rem;
+        color: #4b5563;
+        line-height: 1.7;
+        margin-bottom: 24px;
+        display: block;
+      }
+      .shop-form {
+        background: #f1f5f9;
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 24px;
+      }
+      .Smalltext {
+        font-size: 0.95rem;
+        color: #6366f1;
+        font-weight: 600;
+      }
+      .shop-heading {
+        text-align: center;
+        margin-bottom: 16px;
+      }
+      .shop-text30 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #6366f1;
+      }
+      .shop-navigation {
+        display: flex;
+        justify-content: center;
+        margin-top: 32px;
+      }
+      .shop-items {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+      .shop-button {
+        background: linear-gradient(90deg, #6366f1 0%, #818cf8 100%);
+        color: #fff !important;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 24px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(99, 102, 241, 0.15);
+        transition: background 0.3s, transform 0.2s;
+        text-shadow: 0 1px 2px rgba(60,72,88,0.25);
+        text-decoration: none;
+        display: inline-block;
+      }
+      .shop-button:hover {
+        background: linear-gradient(90deg, #818cf8 0%, #6366f1 100%);
+        transform: translateY(-2px) scale(1.04);
+      }
+      @media (max-width: 767px) {
+        .card {
+          padding: 16px;
+        }
+        .shop-items {
+          flex-direction: column;
+          gap: 12px;
+        }
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(40px);}
+        to { opacity: 1; transform: translateY(0);}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="card">
+        <!-- Fuzzies Creations photo cover all the centered at the top above About Us -->
+        <img 
+          src="../public/fuzzies-creations.jpg" 
+          alt="Fuzzies Creations Front Page" 
+          style="display:block; margin:0 auto 24px auto; max-width:340px; border-radius:20px; box-shadow:0 8px 32px rgba(60,72,88,0.12);" 
+        />
+        <span 
+          class="shop-text10"
+          style="
+            display: block;
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #6366f1;
+            font-family: 'STIX Two Text', serif;
+            margin-bottom: 12px;
+            margin-top: 12px;
+          "
+        >
+          Fuzzies Creations
+        </span>
+        <div class="shop-about">
+          <div class="shop-copy">
+            <span class="Title">About Us</span>
+            <span class="Bodytext">
+              At Fuzzies Creations, we celebrate creativity and individuality through our handcrafted fuzzy wire products.<br><br>
+              Founded by Marianne Aida T. Sison, a passionate entrepreneur dedicated to sustainable living, our mission is to bring joy and personality to everyday items. Our talented team, including artisans Laica Jane M. Capuno and Zhaira Lyn A., specializes in unique accessories like keychains, hats, and home decor, each made with vibrant colors and playful designs.<br><br>
+              We believe every piece should reflect the wearer’s personality and style, offering a wide range of options that make perfect gifts or delightful additions to your own collection. Committed to quality craftsmanship and eco-friendly practices, we aim to inspire a sense of community through our creations—embracing creativity and self-expression, one fuzzy piece at a time!
+            </span>
+          </div>
+          <div class="shop-form">
+            <div class="shop-input1">
+              <span class="Smalltext">Mobile Number:</span>
+              <span class="Smalltext" style="color:#374151;">(0938) 469 1272</span>
+            </div>
+            <div class="shop-input2" style="margin-top:12px;">
+              <span class="Smalltext">Social Media Accounts</span>
+              <div style="margin-top:8px;">
+                <span class="Smalltext">Facebook Page:</span>
+                <a href="https://www.facebook.com/share/1BEzFE6GRx/?mibextid=wwXIfr" target="_blank" style="color:#6366f1; text-decoration:underline;">Fuzzies Creations Facebook</a>
+                <br>
+                <span class="Smalltext">Instagram Account:</span>
+                <a href="https://www.instagram.com/fuzzies_creations?igsh=dDBjOHVyM3h6NDRp&utm_source=qr" target="_blank" style="color:#6366f1; text-decoration:underline;">@fuzzies_creations</a>
+                <br>
+                <span class="Smalltext">Tiktok Account:</span>
+                <a href="https://www.tiktok.com/@fuzzies.creations?_t=ZS-8zqbnaotwEJ&_r=1" target="_blank" style="color:#6366f1; text-decoration:underline;">@fuzzies.creations</a>
+              </div>
+            </div>
+          </div>
+          <div class="shop-heading">
+            <span class="shop-text30">Contact Us</span>
+          </div>
+        </div>
+        <span class="Bodytext" style="text-align:center;display:block;">Fuzzies Creations</span>
+        <div class="shop-navigation">
+          <div class="shop-items">
+            <a href="shop.html" class="shop-button">
+              <span class="Smalltext">Shop with Us</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
